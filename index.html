@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Psychic Game</title>
+</head>
+<body>
+
+
+<div id="game">
+	<p>Guess what letter I'm thinking of</p>
+</div>
+
+<script type="text/javascript">
+
+var computerChoices = ['r', 'p', 's', 't', 'w', 'x', 'z', 'u', 'p'];
+ 
+var wins = 0;
+var losses = 0;
+var guessesleft = 0;
+
+document.onkeyup = function(event) {
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	
+	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	
+	if ((userGuess == 'r') || (userGuess == 'p') || (userGuess == 's') || (userGuess == 't') || (userGuess == 'w') || (userGuess == 'z') || (userGuess == 'u') || (userGuess == 'p')){
+		wins++;
+		// It tests to determine if the computer or the user won the round and then increments 
+		if (true) {} ((userGuess !== 'r') || (userGuess !== 'p') || (userGuess !== 's') || (userGuess !=='t') || (userGuess !=='w') || (userGuess !=='z') || (userGuess !== 'u') || (userGuess !== 'p'))
+			losses++;
+		
+		}  
+		
+		var html = "<p>Guess what letter I'm thinking of</p>" +
+		"<p>wins: " + 
+		wins + 
+		"</p>" +
+		"<p>losses: " + 
+		losses + 
+		"</p>" +
+		"<p>guesses left: " + 
+		guessesleft + 
+		"</p>";
+	
+		document.querySelector('#game').innerHTML = html;
+	}
+
+</script>
+</body>
